@@ -37,11 +37,10 @@ const Contact = () => {
         body: formData,
       });
       const result = await res.json();
-      if (res.ok) {
-        toast.success(result.message ? `${result.message}` : `${result}`);
-      } else {
-        throw new Error(result);
+      if (!res.ok) {
+        throw new Error(result.message ? result.message : result);
       }
+      toast.success(result.message ? `${result.message}` : `${result}`);
     } catch (error: any) {
       toast.error(error.message ? `${error.message}` : `${error}`);
     }
@@ -148,7 +147,7 @@ const Contact = () => {
             />
             <button
               type="submit"
-              className="mt-10 rounded-full px-9 py-4 text-[0.9375rem] font-semibold leading-[1.36406rem] text-white disabled:bg-primary/90"
+              className="mt-10 rounded-full bg-primary px-9 py-4 text-[0.9375rem] font-semibold leading-[1.36406rem] text-white disabled:bg-primary/95"
               disabled={!isValid || !isDirty || isSubmitting}
             >
               {isSubmitting ? 'Sending...' : 'Send message'}
