@@ -142,7 +142,7 @@ const Contact = () => {
             />
             <div
               className="cf-turnstile mt-6"
-              data-sitekey="0x4AAAAAAAL2hsshtDAYjQxx"
+              data-sitekey="0x4AAAAAAALwrWSgXz_7UAP5"
               data-theme="light"
               data-retry-interval={5000}
             />
