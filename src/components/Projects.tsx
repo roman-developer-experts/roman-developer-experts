@@ -56,7 +56,7 @@ const Projects = () => {
                 className="mx-auto object-contain pt-10 tablet:w-[425px] laptop:h-[293.973px] laptop:pt-12"
               />
             </div>
-            <div className="tablet:12 mt-10 max-w-[475px] px-5">
+            <div className="mt-12 max-w-[475px] px-5">
               <h5 className="mb-1 text-[1.3125rem] font-bold leading-[1.575rem] text-body2">
                 {project.title}
               </h5>

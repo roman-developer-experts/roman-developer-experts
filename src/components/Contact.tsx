@@ -142,12 +142,12 @@ const Contact = () => {
                 error: errors.message?.message as string,
               }}
             />
-            {/* <div
+            <div
               className="cf-turnstile mt-4 laptop:mt-6"
               data-sitekey="0x4AAAAAAALwrWSgXz_7UAP5"
               data-theme="light"
               data-retry-interval={5000}
-            /> */}
+            />
             <button
               type="submit"
               className="mt-4 w-full rounded-full bg-primary px-6 py-3 text-[0.9375rem] font-semibold leading-[1.36406rem] text-white disabled:bg-primary/95 tablet:w-auto tablet:px-9 laptop:mt-10 laptop:py-4"
