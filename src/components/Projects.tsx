@@ -34,28 +34,29 @@ const Projects = () => {
     },
   ];
   return (
-    <section id="projects" className="my-[12rem]">
-      <div className="mb-16 max-w-[605px]">
+    <section id="projects" className="my-24 laptop:my-[12rem]">
+      <div className="mb-12 max-w-[605px] laptop:mb-16">
         <p className="text-[0.92875rem] font-semibold leading-[1.35138rem] tracking-[0.11144rem] text-body2">
           PROJECTS
         </p>
-        <h2 className="my-5 text-[2.1875rem] font-extrabold leading-[2.40625rem] text-black">
+        <h2 className="my-3 text-3xl font-extrabold leading-[2.40625rem] text-black laptop:my-5 laptop:text-[2.1875rem]">
           We have worked on some amazing products across different industries
         </h2>
       </div>
-      <div className="grid grid-cols-2 items-center justify-between gap-16">
+      <div className="grid items-center justify-center gap-y-14 laptop:grid-cols-2 laptop:justify-between laptop:gap-x-8">
         {projects.map((project) => (
           <div key={project.id}>
             <div
-              className={`h-[275px] w-[480px] rounded-[1.06481rem] ${project.bgColor}`}
+              className={`h-[160px] rounded-[1.06481rem] px-4 mobile-md:h-[190px] mobile-lg:h-[220px] tablet:h-[250px] laptop:h-[275px] laptop:w-[480px] laptop:px-0 ${project.bgColor}`}
             >
               <Image
                 src={project.img}
                 alt={project.title}
-                className="mx-auto h-[293.973px] w-[520px] object-contain pt-12"
+                sizes="(max-width: 768px) 450px, 520px"
+                className="mx-auto object-contain pt-10 tablet:w-[425px] laptop:h-[293.973px] laptop:pt-12"
               />
             </div>
-            <div className="mt-12 max-w-[475px] px-5">
+            <div className="tablet:12 mt-10 max-w-[475px] px-5">
               <h5 className="mb-1 text-[1.3125rem] font-bold leading-[1.575rem] text-body2">
                 {project.title}
               </h5>

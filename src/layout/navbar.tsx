@@ -23,7 +23,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed left-0 top-0 z-10 mx-auto flex w-full items-center justify-between px-6 py-4 transition-all ease-linear tablet:px-20 laptop:px-6 laptop:py-10 laptop-md:px-20  ${
+      className={`fixed left-0 top-0 z-10 mx-auto flex w-screen items-center justify-between px-6 py-4 transition-all ease-linear tablet:px-20 laptop:px-6 laptop:py-10 laptop-md:px-20  ${
         backgroundTransparent <= 0 ? 'bg-transparent' : 'bg-white'
       }
       ${backgroundTransparent <= 0 ? 'shadow-none' : 'shadow'}
@@ -52,7 +52,7 @@ const Navbar = () => {
           ))}
         </ul>
         <Button
-          className="bg-primary text-white hover:bg-primary/90 laptop:px-[2.4rem]"
+          className="bg-primary px-6 text-white hover:bg-primary/90 laptop:px-[2.4rem]"
           text="Get in Touch"
         />
       </div>
@@ -60,23 +60,24 @@ const Navbar = () => {
         <MenuIcon
           onClick={showDrawer}
           style={{ fontSize: '21px' }}
-          fill="#0D347EE5"
+          fill="#5956E9"
         />
       </div>
       {open && (
         <Portal onClose={onClose}>
           <div
-            className="absolute right-0 top-0 h-full w-[70%] gap-4 bg-[#FFFCFA] p-4 pt-8 mobile-md:w-3/5"
+            className="absolute right-0 top-0 h-full w-[70%] gap-4 bg-white p-4 pt-8 mobile-md:w-3/5 laptop:hidden"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="w-[90%]">
-              <div className="mt-6 flex flex-col items-start justify-start gap-4 laptop:hidden">
-                <ul className="flex flex-col items-center justify-center gap-[2.31rem]">
+              <div className="mt-6 flex flex-col items-start justify-start gap-8">
+                <ul className="flex flex-col gap-3">
                   {navLinks.map((link) => (
                     <li key={link.id}>
                       <a
                         href={`${link.hash}`}
                         className="text-[0.9375rem] font-semibold leading-[1.36406rem] text-dark"
+                        onClick={onClose}
                       >
                         {link.title}
                       </a>
@@ -84,8 +85,9 @@ const Navbar = () => {
                   ))}
                 </ul>
                 <Button
-                  className="bg-primary text-white hover:bg-primary/90 laptop:px-[2.4rem]"
+                  className="bg-primary px-6 text-white hover:bg-primary/90 laptop:px-[2.4rem]"
                   text="Get in Touch"
+                  onClick={onClose}
                 />
               </div>
             </div>

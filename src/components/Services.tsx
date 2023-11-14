@@ -53,11 +53,11 @@ const Services = () => {
         <p className="text-[0.92875rem] font-semibold leading-[1.35138rem] tracking-[0.11144rem] text-body2">
           OUR SERVICES
         </p>
-        <h2 className="my-5 text-[2.1875rem] font-extrabold leading-[2.40625rem] text-black">
+        <h2 className="my-3 text-3xl font-extrabold leading-[2.40625rem] text-black laptop:my-5 laptop:text-[2.1875rem]">
           We provide high-quality IT solutions
         </h2>
       </div>
-      <div className="grid grid-cols-3 items-center justify-between gap-16">
+      <div className="grid items-center justify-center gap-12 tablet:grid-cols-2 laptop:grid-cols-3 laptop:justify-between laptop:gap-16">
         {services.map((item) => (
           <div className="max-w-[311.139px]" key={item.id}>
             <Image

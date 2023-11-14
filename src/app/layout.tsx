@@ -26,7 +26,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-pt-40 scroll-smooth">
+    <html
+      lang="en"
+      className="scroll-pt-20 scroll-smooth tablet:scroll-pt-24 laptop:scroll-pt-40"
+    >
       <body className={mulish.className}>
         <Layout>
           {children}

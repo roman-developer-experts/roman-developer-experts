@@ -26,6 +26,7 @@ const config: Config = {
         laptop: '1024px',
         'laptop-md': '1440px',
         desktop: '1280px',
+        'desktop-lg': '2560px',
       },
     },
   },

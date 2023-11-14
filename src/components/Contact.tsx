@@ -47,12 +47,15 @@ const Contact = () => {
   };
 
   return (
-    <Card id="contact" className="relative h-[450px] pt-7 laptop:pt-28">
+    <Card
+      id="contact"
+      className="relative h-[350px] pt-14 laptop:h-[450px] laptop:pt-28"
+    >
       <div className="absolute left-1/2 -translate-x-1/2 text-center">
-        <h2 className="mb-6 text-[1.875rem] font-extrabold leading-[2.5rem] text-white laptop:mb-4 laptop:text-[2.8125rem] laptop:leading-[3.09375rem]">
+        <h2 className="mb-4 text-[1.875rem] font-extrabold leading-[2.5rem] text-white laptop:text-[2.8125rem] laptop:leading-[3.09375rem]">
           Get in Touch
         </h2>
-        <div className="flex flex-row items-center justify-center gap-2 laptop:gap-8">
+        <div className="flex flex-col items-start justify-center gap-1 laptop:flex-row laptop:items-center laptop:gap-8">
           <a
             href="mailto:hello@romandevexperts.com"
             className="flex items-center justify-center gap-2"
@@ -77,15 +80,15 @@ const Contact = () => {
           </a>
         </div>
       </div>
-      <div className="absolute left-1/2 top-[60%] w-full max-w-[1139px] -translate-x-1/2">
-        <div className="contact card-shadow w-full rounded-2xl bg-white px-[3.8rem] py-12">
+      <div className="absolute left-1/2 top-[60%] w-[90%] max-w-[1139px] -translate-x-1/2 laptop-md:w-full">
+        <div className="contact card-shadow w-full rounded-2xl bg-white p-8 laptop:px-[3.8rem] laptop:py-12">
           <form
             autoComplete="off"
             onSubmit={handleSubmit(onSubmit)}
             noValidate
             className="mx-auto"
           >
-            <div className="flex items-center justify-center gap-8">
+            <div className="flex flex-col items-center justify-center gap-2 laptop:flex-row laptop:gap-8">
               <Input
                 inputProps={{
                   id: 'name',
@@ -107,7 +110,7 @@ const Contact = () => {
                 }}
               />
             </div>
-            <div className="flex items-center justify-center gap-8">
+            <div className="flex flex-col items-center justify-center gap-2 laptop:flex-row laptop:gap-8">
               <Input
                 inputProps={{
                   id: 'company',
@@ -139,15 +142,15 @@ const Contact = () => {
                 error: errors.message?.message as string,
               }}
             />
-            <div
-              className="cf-turnstile mt-6"
+            {/* <div
+              className="cf-turnstile mt-4 laptop:mt-6"
               data-sitekey="0x4AAAAAAALwrWSgXz_7UAP5"
               data-theme="light"
               data-retry-interval={5000}
-            />
+            /> */}
             <button
               type="submit"
-              className="mt-10 rounded-full bg-primary px-9 py-4 text-[0.9375rem] font-semibold leading-[1.36406rem] text-white disabled:bg-primary/95"
+              className="mt-4 w-full rounded-full bg-primary px-6 py-3 text-[0.9375rem] font-semibold leading-[1.36406rem] text-white disabled:bg-primary/95 tablet:w-auto tablet:px-9 laptop:mt-10 laptop:py-4"
               disabled={!isValid || !isDirty || isSubmitting}
             >
               {isSubmitting ? 'Sending...' : 'Send message'}

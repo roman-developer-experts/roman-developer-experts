@@ -15,17 +15,17 @@ const About = () => {
   return (
     <section
       id="about"
-      className="my-[12rem] grid grid-cols-[3fr,2fr] items-center justify-between"
+      className="my-24 grid items-center justify-between gap-12 laptop:my-[12rem] laptop:grid-cols-[3fr,2fr]"
     >
       <div className="max-w-[610px]">
         <p className="text-[0.92875rem] font-semibold leading-[1.35138rem] tracking-[0.11144rem] text-body2">
           ABOUT US
         </p>
         <div>
-          <h2 className="my-5 text-[2.1875rem] font-extrabold leading-[2.40625rem] text-black">
+          <h2 className="my-3 text-3xl font-extrabold leading-[2.40625rem] text-black laptop:my-5 laptop:text-[2.1875rem]">
             Crafting solutions that redefine technology.
           </h2>
-          <p className="text-base leading-[1.6875rem] text-body">
+          <p className="text-sm leading-[1.6875rem] text-body laptop:text-base">
             We are a technology firm specializing in software development,
             training, networking, hardware procurement/maintenance, IT
             consulting and cloud infrastructure. Our journey is rooted in a
@@ -38,10 +38,10 @@ const About = () => {
             skills and create transformative digital experiences.
           </p>
         </div>
-        <ul className="check-mark relative mt-8 grid grid-cols-2 items-center justify-between gap-x-8 gap-y-3">
+        <ul className="check-mark relative mt-4 grid items-center justify-between gap-x-8 gap-y-2 tablet:grid-cols-2 laptop:mt-8 laptop:gap-y-3">
           {listItems.map((list) => (
             <li
-              className="flex items-center gap-3 text-[0.9375rem] font-semibold leading-[1.41094rem] text-body"
+              className="flex items-center gap-3 text-sm font-semibold leading-[1.41094rem] text-body laptop:text-[0.9375rem]"
               key={list.id}
             >
               <TickIcon />
@@ -50,16 +50,17 @@ const About = () => {
           ))}
         </ul>
       </div>
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-y-4 laptop:gap-y-6">
         <div>
           <Image
             src={img1}
             alt="about 1"
-            className="max-w-[516px] rounded-[0.81069rem]"
+            sizes="(max-width: 768px) 375px, (max-width: 1200px) 516px, 516px"
+            className="rounded-[0.81069rem]"
           />
         </div>
-        <div className="align-center flex justify-between">
-          <div className="rounded-[0.81069rem] bg-primary px-10 py-8 text-white">
+        <div className="align-center flex gap-x-4 laptop:gap-x-6">
+          <div className="flex flex-col items-center justify-center rounded-[0.81069rem] bg-primary px-4 py-8 text-white mobile-lg:px-10">
             <h3 className="text-[2.83731rem] font-extrabold leading-[3.12106rem]">
               100+
             </h3>
@@ -70,7 +71,8 @@ const About = () => {
           <Image
             src={img2}
             alt="about 2"
-            className="max-w-[294px] rounded-[0.81069rem]"
+            sizes="(max-width: 320px) 130px, (max-width: 768px) 150px,(max-width: 1024px) 170px, (max-width: 1200px) 294px, 294px"
+            className="rounded-[0.81069rem]"
           />
         </div>
       </div>
